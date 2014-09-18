@@ -11,7 +11,7 @@ yum clean all
 
 ADD snmpd.conf /etc/snmp/snmpd.conf
 ADD init/env.sh /config/init/env.sh
-ADD supervisord.conf /etc/supervisord.d/supervisord-snmpd.conf
+ADD supervisord-snmpd.conf /etc/supervisord.d/supervisord-snmpd.conf
 
 EXPOSE 161
 
