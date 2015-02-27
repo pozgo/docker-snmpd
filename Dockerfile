@@ -1,18 +1,15 @@
-FROM polinux/centos7:latest
+FROM centos:centos7
 MAINTAINER Przemyslaw Ozgo <linux@ozgo.info>
 
-ENV SERVER_IP 127.0.0.1
-ENV LOCATION Office
-ENV ADMIN_EMAIL sysadmin@email.com
+RUN \
+    yum update -y && \
+    yum install -y net-snmp && \
+    yum clean all
 
-RUN yum update -y && \
-yum install -y net-snmp && \
-yum clean all
+COPY container-files /
 
-ADD snmpd.conf /etc/snmp/snmpd.conf
-ADD init/env.sh /config/init/env.sh
-ADD supervisord-snmpd.conf /etc/supervisor.d/snmpd.conf
+ENV SERVER_IP=127.0.0.1 LOCATION=Office ADMIN_EMAIL=sysadmin@email.com
 
 EXPOSE 161
 
-CMD ["/config/bootstrap.sh"]
+ENTRYPOINT ["/bootstrap.sh"]
