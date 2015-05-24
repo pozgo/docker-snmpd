@@ -3,17 +3,12 @@ This is polinux/snmpd docker image with snmpd daemon running in foreground and b
 
 This container is built that any extra parameters provided to docker run will be passed directly to snmpd command. For example, if you run docker `run [run options] polinux/snmpd -c FILE` you pass `-c FILE` to snmpd daemon.
 
-## ENV Variables
-`ENV SERVER_IP=127.0.0.1` (IP of the monitoring server)  
-`ENV LOCATION=Office` (ocation of the monitored node)  
-`ENV ADMIN_EMAIL=sysadmin@email.com` (System administrator email)
-
 ## Usage
 ### Basic
 `docker run \`  
 `-d \`  
 `--name snmpd \`  
-`-p 161:161 \`  
+`-p 161:161/udp \`  
 `polinux/snmpd`
 
 ### Mount custom config , override some options
@@ -21,20 +16,10 @@ Using custom config file:
 `docker run \`  
 `-d \`  
 `--name snmpd \`  
-`-p 161:161 \`  
+`-p 161:161/udp \`  
 `-v /my-snmpd.conf:/etc/snmpd/snmpd.conf \`  
 `polinux/snmpd \`  
 `-c /etc/snmpd/snmod.conf`
-
-Using just ENV variables:  
-`docker run \`  
-`-d \`  
-`--name snmpd \`  
-`-p 161:161 \`  
-`--env="SERVER_IP=server_ip" \`  
-`--env="LOCATION=user1-computer" \`  
-`--env="ADMIN_EMAIL=my@email.com" \`   
-`polinux/snmpd`
 
 ### SNMPD CMD params
 `snmpd` command can be used with some parameters to define monitoring server address and other parameters. Simple --help output below:

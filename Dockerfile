@@ -3,7 +3,7 @@ MAINTAINER Przemyslaw Ozgo <linux@ozgo.info>
 
 RUN \
     yum update -y && \
-    yum install -y net-snmp && \
+    yum install -y net-snmp net-snmp-utils && \
     yum clean all
 
 COPY container-files /
