@@ -8,8 +8,6 @@ RUN \
 
 COPY container-files /
 
-ENV SERVER_IP=127.0.0.1 LOCATION=Office ADMIN_EMAIL=sysadmin@email.com
-
 EXPOSE 161
 
 ENTRYPOINT ["/bootstrap.sh"]
