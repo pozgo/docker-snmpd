@@ -5,21 +5,23 @@ This container is built that any extra parameters provided to docker run will be
 
 ## Usage
 ### Basic
-`docker run \`  
-`-d \`  
-`--name snmpd \`  
-`-p 161:161/udp \`  
-`polinux/snmpd`
+
+    docker run \
+    -d \
+    --name snmpd \
+    -p 161:161/udp \
+    polinux/snmpd
 
 ### Mount custom config , override some options
 Using custom config file:  
-`docker run \`  
-`-d \`  
-`--name snmpd \`  
-`-p 161:161/udp \`  
-`-v /my-snmpd.conf:/etc/snmpd/snmpd.conf \`  
-`polinux/snmpd \`  
-`-c /etc/snmpd/snmod.conf`
+
+    docker run \
+    -d \
+    --name snmpd \
+    -p 161:161/udp \
+    -v /my-snmpd.conf:/etc/snmpd/snmpd.conf \
+    polinux/snmpd \
+    -c /etc/snmpd/snmod.conf
 
 ### SNMPD CMD params
 `snmpd` command can be used with some parameters to define monitoring server address and other parameters. Simple --help output below:
