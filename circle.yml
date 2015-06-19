@@ -1,0 +1,20 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - docker info && docker version
+    - sudo apt-get install snmp
+
+# Run tests
+test:
+  pre:
+    - docker build -t polinux/snmpd .
+
+  override:
+    # Launch it
+    - docker run -d -p 161:161/udp --name snmpd polinux/snmpd
+    - while true; do if docker logs snmpd | grep "snmpd -f"; then break; else sleep 1; fi done
+    # test if accessible
+    - snmpwalk -Os -v 2c -c public localhost

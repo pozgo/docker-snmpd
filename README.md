@@ -1,4 +1,6 @@
 ##NET-SNMP Daemon 
+[![Circle CI](https://circleci.com/gh/pozgo/docker-snmpd/tree/master.svg?style=svg&circle-token=13c04326ff25da8b76a8bd25c14eb6191a03fd2a)](https://circleci.com/gh/pozgo/docker-snmpd/tree/master)
+
 This is polinux/snmpd docker image with snmpd daemon running in foreground and based on offcial CentOS-7 and offers ability to provide any argument to snmpd process.
 
 This container is built that any extra parameters provided to docker run will be passed directly to snmpd command. For example, if you run docker `run [run options] polinux/snmpd -c FILE` you pass `-c FILE` to snmpd daemon.
