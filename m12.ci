@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# CI Environments
+branch=$(echo $GIT_BRANCH | cut -d/ -f 2)
+ci_home_dir=$(echo $WORKSPACE)
+
+# Build Environments
+name="snmpd"
+image="polinux/snmpd"
+
+# Build
+docker build -t ${image}:${branch} .
+
+# Run
+docker run -d --name ${name} -p 161:161 ${image}:${branch}
+
+# Tests
+while true; do if docker logs ${name} | grep "snmpd -f"; then break; else sleep 1; fi done
+# test if accessible
+snmpwalk -Os -v 2c -c public localhost
+
+# Cleaning
+docker rm -f ${name}
+docker rmi -f ${image}:${branch}
