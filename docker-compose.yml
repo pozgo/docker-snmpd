@@ -1,0 +1,5 @@
+snmpd:
+  image: polinux/snmpd:latest
+  ports:
+    - "161:161/udp"
+  privileged: true

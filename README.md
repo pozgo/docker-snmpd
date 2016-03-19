@@ -1,5 +1,14 @@
-##NET-SNMP Daemon 
+##NET-SNMP Daemon  
 [![Circle CI](https://circleci.com/gh/pozgo/docker-snmpd/tree/master.svg?style=svg&circle-token=13c04326ff25da8b76a8bd25c14eb6191a03fd2a)](https://circleci.com/gh/pozgo/docker-snmpd/tree/master)
+[![GitHub Open Issues](https://img.shields.io/github/issues/pozgo/docker-snmpd.svg)](https://github.com/pozgo/docker-snmpd/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/pozgo/docker-snmpd.svg)](https://github.com/pozgo/docker-snmpd)
+[![GitHub Forks](https://img.shields.io/github/forks/pozgo/docker-snmpd.svg)](https://github.com/pozgo/docker-snmpd)  
+[![Stars on Docker Hub](https://img.shields.io/docker/stars/polinux/snmpd.svg)](https://hub.docker.com/r/polinux/snmpd)
+[![Pulls on Docker Hub](https://img.shields.io/docker/pulls/polinux/snmpd.svg)](https://hub.docker.com/r/polinux/snmpd)  
+[![Docker Layers](https://imagelayers.io/images/example-badge.svg)](https://hub.docker.com/r/polinux/snmpd)
+
+[![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/?repo=https://github.com/pozgo/docker-snmpd/tree/devel)
+
 
 This is polinux/snmpd docker image with snmpd daemon running in foreground and based on offcial CentOS-7 and offers ability to provide any argument to snmpd process.
 
