@@ -7,7 +7,7 @@
 [![Pulls on Docker Hub](https://img.shields.io/docker/pulls/polinux/snmpd.svg)](https://hub.docker.com/r/polinux/snmpd)  
 [![Docker Layers](https://imagelayers.io/images/example-badge.svg)](https://hub.docker.com/r/polinux/snmpd)
 
-[![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/?repo=https://github.com/pozgo/docker-snmpd/tree/devel)
+[![Deploy to Docker Cloud](https://files.cloud.docker.com/images/deploy-to-dockercloud.svg)](https://cloud.docker.com/stack/deploy/?repo=https://github.com/pozgo/docker-snmpd/tree/master)
 
 
 This is polinux/snmpd docker image with snmpd daemon running in foreground and based on offcial CentOS-7 and offers ability to provide any argument to snmpd process.
