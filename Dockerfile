@@ -1,10 +1,9 @@
-FROM centos:centos7
-MAINTAINER Przemyslaw Ozgo <linux@ozgo.info>
+FROM alpine:latest
 
 RUN \
-    yum update -y && \
-    yum install -y net-snmp net-snmp-utils && \
-    yum clean all
+  apk add --update net-snmp net-snmp-tools && \
+  rm -rf /var/cache/apk/* && \
+  sed -i 's/agentAddress  udp:127.0.0.1:161/agentAddress  udp:0.0.0.0:161/g' /etc/snmp/snmpd.conf
 
 COPY container-files /
 

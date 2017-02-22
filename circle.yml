@@ -15,6 +15,6 @@ test:
   override:
     # Launch it
     - docker run -d -p 161:161/udp --name snmpd polinux/snmpd
-    - while true; do if docker logs snmpd | grep "snmpd -f"; then break; else sleep 1; fi done
+    - while true; do if docker logs snmpd | grep "SNMPD Daemon started..."; then break; else sleep 1; fi done
     # test if accessible
     - snmpwalk -Os -v 2c -c public localhost
